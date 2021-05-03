@@ -3,6 +3,7 @@
 	<head>
 		<title> Task Manager </title>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="static/styles.css">
 	</head>
 
 	<body>
@@ -11,7 +12,7 @@
 		% for task in tasks:
 		<li>
 			<input class="checkbox" type="checkbox"/>
-			{{task}}
+			{{ task.description}}
 			<a class="remove" href="#">×</a>
 			<hr/>
 		</li>
@@ -21,7 +22,7 @@
 			<input type="text" class="form-control"/>
 			<button class="add" type="submit">+</button>
 		</form>
-		
+
 	</body>
 
 </html>	
