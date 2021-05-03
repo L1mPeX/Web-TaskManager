@@ -1,4 +1,4 @@
-from bottle import route, run, view
+from bottle import route, run, view, static_file
 
 
 class TodoItem:
