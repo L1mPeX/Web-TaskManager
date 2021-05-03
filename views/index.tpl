@@ -1,28 +1,29 @@
 <html>
+  <head>
+    <title>Today Todo list</title>
+    <link rel="stylesheet" href="static/styles.css">
 
-	<head>
-		<title> Task Manager </title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="static/styles.css">
-	</head>
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="static/script.js"></script>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Todo list</h1>
+    <ul id="todo-list">
+    % for task in tasks:
+      <li>
+        <input class='checkbox' type='checkbox' />
+        {{ task }}
+        <a class="remove" href="#">X</a>
+        <hr/>
+      </li>
+    % end
+    </ul>
+    <form id="todo-add">
+      <input type="text" id="new-todo-description" class="form-control"/>
+      <button class="add" type="submit">+</button>
+    </form>
+  </div>
+  </body>
 
-	<body>
-		<h1> Simple Task Manager </h1>
-		<ul id="todo-list"> </ul>
-		% for task in tasks:
-		<li>
-			<input class="checkbox" type="checkbox"/>
-			{{ task.description}}
-			<a class="remove" href="#">×</a>
-			<hr/>
-		</li>
-		%end
-		<br/>
-		<form id="todo-add">
-			<input type="text" class="form-control"/>
-			<button class="add" type="submit">+</button>
-		</form>
-
-	</body>
-
-</html>	
+</html>
