@@ -6,6 +6,10 @@ class TodoItem:
         self.description = description
         self.is_completed = False
 
+@route('/static/<filename:path>')
+def send_static(filename):
+    return static_file(filename, root="static")
+
 
 @route("/")
 @view("index")
