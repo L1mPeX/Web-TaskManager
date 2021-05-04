@@ -37,6 +37,14 @@ def api_comlete(uid):
 	tasks_db[uid].is_completed = True
 	return "Ok"
 
+@route("/add-task", method="POST")
+def add_task():
+	desc = request.POST.description.strip()
+	if len(desc) > 0:
+		new_uid = max(tasks_db.keys()) + 1
+		t = TodoItem(desc, new_uid)
+		tasks_db[new_uid] = t
+	return redirect("/")
 
 ###
 run(host="localhost", port=8080)
